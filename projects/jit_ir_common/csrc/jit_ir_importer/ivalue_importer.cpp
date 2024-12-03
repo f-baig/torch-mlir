@@ -376,6 +376,7 @@ MlirValue IValueImporter::importTensor(c10::IValue ivalue) {
 
   // TODO: Can we do better?
   MlirLocation loc = mlirLocationUnknownGet(context);
+  // potentially could add DTL optimizations here
 
   // Import the bulk tensor representation.
   at::Tensor tensor = ivalue.toTensor().contiguous();
